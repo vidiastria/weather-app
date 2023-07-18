@@ -1,0 +1,95 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;1,200;1,300;1,400&family=Rozha+One&display=swap");
+
+body {
+    font-family: "Poppins", sans-serif;
+    /* font-family: "Rozha One", serif; */
+    color: #654321;
+    background-color: #cadfdd;
+}
+
+a {
+    color: #15665e;
+    text-decoration: none;
+    background-color: transparent;
+}
+a:hover {
+    cursor: pointer;
+    color: #15665e;
+    text-decoration: underline;
+}
+.weather-app-container {
+    max-width: 900px;
+    margin: 3rem auto;
+    padding: 20px;
+    border-radius: 25px;
+    background-color: rgba(240, 240, 240, 0.2);
+    box-shadow: 8px 9px 14px -7px rgba(0, 0, 0, 0.67);
+    -webkit-box-shadow: 8px 9px 14px -7px rgba(0, 0, 0, 0.67);
+    -moz-box-shadow: 8px 9px 14px -7px rgba(0, 0, 0, 0.67);
+    box-shadow: 8px 9px 14px -7px rgba(0, 0, 0, 0.2);
+}
+/* button search + geo tag */
+
+.btnGeotag {
+    color: #654321;
+    display: block;
+    margin: 0 auto;
+    padding: 0;
+}
+#current-city {
+    position: relative;
+    font-size: 40px;
+    color: #654321;
+    text-transform: uppercase;
+}
+#current-description {
+    position: relative;
+    font-size: 16px;
+    color: #654321;
+}
+.currentTemp {
+    position: relative;
+    font-size: 40px;
+    color: #654321;
+    font-weight: bold;
+    padding: 20px;
+    text-decoration: none;
+}
+.linkCelcius {
+    text-decoration: none;
+    font-size: 20px;
+    color: #59a099;
+}
+.linkCelcius:hover {
+    color: #15665e;
+}
+.linkFahrent {
+    text-decoration: none;
+    font-size: 20px;
+    color: #59a099;
+}
+.linkFahrent:hover {
+    color: #15665e;
+}
+.more-details {
+    font-size: small;
+    text-align: center;
+    /* max-width: max-content; */
+}
+.weather-forecast {
+    font-size: 15px;
+    text-align: center;
+}
+.forecast-image {
+    border: none;
+    font-size: 40px;
+    border-radius: 150px;
+    background: linear-gradient(145deg, #f2f2f2, #edf2db);
+    box-shadow: 7px 7px 13px #d1d1d5, -7px -7px 13px #e6e5f1;
+}
+.madeby {
+    text-align: center;
+    font-family: "futura", sans-serif;
+    font-weight: 100;
+    color: #654321;
+}
