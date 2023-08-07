@@ -106,7 +106,7 @@ celciusLink.addEventListener("click", clickCelcius);
 // Click F
 function clickFahrent(event) {
     let currentCels = document.querySelector("#currentTemp");
-    currentCels.innerHTML = currentCels - 30;
+    currentCels.innerHTML = currentCels - 32;
 }
 let fahrentLink = document.querySelector("#linkFahrent");
 fahrentLink.addEventListener("click", clickFahrent);
