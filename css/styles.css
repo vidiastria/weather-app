@@ -17,6 +17,12 @@ a:hover {
     color: #15665e;
     text-decoration: underline;
 }
+
+li {
+    list-style: none;
+    text-transform: capitalize;
+}
+
 .weather-app-container {
     max-width: 900px;
     margin: 3rem auto;
@@ -52,12 +58,16 @@ a:hover {
     font-size: 40px;
     color: #654321;
     font-weight: bold;
-    padding: 20px;
+    padding: 2px;
     text-decoration: none;
+}
+.linkTemp {
+    position: relative;
+    font-size: 16px;
+    top: -18px;
 }
 .linkCelcius {
     text-decoration: none;
-    font-size: 20px;
     color: #59a099;
 }
 .linkCelcius:hover {
@@ -65,7 +75,7 @@ a:hover {
 }
 .linkFahrent {
     text-decoration: none;
-    font-size: 20px;
+
     color: #59a099;
 }
 .linkFahrent:hover {
