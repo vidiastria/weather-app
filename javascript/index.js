@@ -36,7 +36,6 @@ function formatDate(date) {
         "Dec",
     ];
     let month = months[monthIndex];
-
     let tanggal = date.getDate();
     let year = date.getFullYear();
     return `${day} ${tanggal} ${month}, ${year} | ${hour}:${minutes}`;
@@ -48,14 +47,27 @@ currentDate.innerHTML = formatDate(currentTime);
 
 // function Geo Location
 function showWeather(response) {
-    let h1 = document.querySelector("#currentTemp");
-    let temperature = Math.round(response.data.main.temp);
-    h1.innerHTML = `Now ${temperature}°`;
+    console.log(response);
+    let tempElement = document.querySelector("#currentTemp");
+    let cityElement = document.querySelector("#city");
+    let descriptionElement = document.querySelector("#description-content");
+    let humidityElement = document.querySelector("#humidity-content");
+    let windElement = document.querySelector("#wind-content");
 
-    document.querySelector("#current-city").innerHTML = `On Your Location`;
+    tempElement.innerHTML = Math.round(response.data.main.temp);
+    cityElement.innerHTML = response.data.name;
+    descriptionElement.innerHTML = response.data.weather[0].description;ß
+    humidityElement.innerHTML = response.data.main.humidity;
+    windElement.innerHTML = Math.round(response.data.wind.speed);
+
+    /*
+    h1.innerHTML = `Now ${temperature}°`;
+    let newCity = response.data.name;
+    document.querySelector("#current-city").innerHTML = `${newCity}`; */
 }
 let apiKey = `92ae1b187edd2a2ef4402a40ac2b91dd`;
-let apiText = `https://api.openweathermap.org/data/2.5/weather`;
+let apiText = `https://api.openweathermap.org/data/2.5/weather?q=Jakarta&appid=${apiKey}&units=metric`;
+axios.get(apiText).then(showWeather);
 
 function showPosition(position) {
     let lati = position.coords.latitude;
@@ -86,12 +98,9 @@ function showCityTemp(city) {
 
 function getCity(event) {
     event.preventDefault();
-    let city = document.querySelector("#search-city").value;
-    showCityTemp(city);
+    let currentCity = document.querySelector("#search-city").value;
+    showCityTemp(currentCity);
 }
-
-let form = document.querySelector("#search-form");
-form.addEventListener("submit", getCity);
 
 // Celcius - Fahrenheit click, still on progress
 // Click C
@@ -105,9 +114,16 @@ celciusLink.addEventListener("click", clickCelcius);
 
 // Click F
 function clickFahrent(event) {
-    let currentCels = document.querySelector("#currentTemp");
-    currentCels.innerHTML = currentCels - 32;
+    event.preventDefault();
+    let temperatureElement = document.querySelector("#currentTemp");
+    let fahrentTemperature = (temperatureElement.innerHTML * 9) / 5 + 32;
+    temperatureElement.innerHTML = Math.round(fahrentTemperature);
 }
+
+let celciusTemperature = null;
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", getCity);
+
 let fahrentLink = document.querySelector("#linkFahrent");
 fahrentLink.addEventListener("click", clickFahrent);
 
