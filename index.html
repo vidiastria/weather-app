@@ -59,38 +59,38 @@
                             class= "btn btn-light" 
                         >Use Current Location</button>
                         
-                
+   
                     </form>
                 </div>
         <!-- Box Container -->
                 <div class="row weather-content h4 p-4 m-4 border border-success rounded-4">
                     <div class="col text-center text-black">
                         <span class="m1 opacity-50" id="current-city">
-                            <h1>Jakarta</h1></span>
+                            <h1 id="city">Jakarta</h1></span>
                             <!--   div 1 for temperature, with image background -->
                         <div id="current-description">
                             <a>Last updated: </a><a id="current-date">Wed 14:69</a>
                         </div>
                         <div id="tempt-content" class="tempt-content">
-                            <a class="currentTemp" id="currentTemp" >27</a>
-                            <a class="linkCelcius" id="linkCelcius" href="#" type="number">°C</a> |
-                            <a class="linkFahrent" id="linkFahrent" href="#" type="number">°F</a>
+                            <a class="currentTemp" id="currentTemp" >14</a>
+                            <span class="linkTemp linkCelcius" id="linkCelcius" href="#" type="number">°C | </span>
+                            <span class="linkTemp linkFahrent" id="linkFahrent" href="#" type="number">°F </span>
                         </div>
                     </div>
         <!--  div 1 for description like humidity, wind, feels like -->
+                    <div class="more-details">
+                        <li id="description-content"> description </li>
+                    </div>    
                     <div class="row justify-content-evenly more-details">
-                        <div class="col-3 more-details-boxes">
-                            <p>Precipitation</p>
-                            <div class="inside" id="humidity-content">40%</div>
+                        
+                        <div class="col-md-3">
+                            <a>Humidity :</a>
+                            <span id="humidity-content">100 </span> %
                         </div>
-                        <div class="col-3 more-details-boxes">
-                            <p>Humidity</p>
-                            <div class="inside" id="humidity-content">100%</div>
-                        </div>
-                        <div class="col-3 more-details-boxes">
-                            <p>Wind</p>
-                            <div class="inside" id="wind-content">2 km/h</div>
-                        </div>
+                        <div class="col-md-3">
+                            <a>Wind :</a>
+                            <span id="wind-content">2 </span> km/h
+                         </div>   
                     </div>
                 </div>
         <!--  div 1 for forecast 6 day ahead, div 2 using card , row and col -->
